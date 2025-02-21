@@ -58,26 +58,15 @@ elif page == "Data Operations":
         for file in uploaded_files:
             file_ext = os.path.splitext(file.name)[-1].lower()
 
-            # Handle CSV files
+            # Handle files
+            # Handle file
             if file_ext == ".csv":
-                try:
-                    df = pd.read_csv(file, encoding='ISO-8859-1')
-                except UnicodeDecodeError:
-                    st.error(f"❌ Error reading CSV file. The file might have a different encoding.")
-                    continue
-                except Exception as e:
-                    st.error(f"❌ Error reading CSV file: {e}")
-                    continue
+               df = pd.read_csv(file)
             elif file_ext == ".xlsx":
-                try:
-                    df = pd.read_excel(file)
-                except Exception as e:
-                    st.error(f"❌ Error reading Excel file: {e}")
-                    continue
+               df = pd.read_excel(file)
             else:
-                st.error(f"❌ Unsupported file type: {file_ext}")
-                continue
-
+               st.error(f"Unsupported file type: {file_ext}")
+               continue  
             # Display file info
             st.write(f"📄 File Name: {file.name}")
             st.write(f"💾 File Size: {file.size / 1024:.2f} KB")
