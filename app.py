@@ -12,7 +12,7 @@ HEADER_COLOR = '#ff6347'  # Tomato color
 TEXT_COLOR = '#2f4f4f'  # Dark Slate
 
 # Sidebar 
-st.sidebar.write("<h1 style='font-size: 40px;'>DATA SWEEPER</h1>", unsafe_allow_html=True)
+st.sidebar.write("<h1 style='font-size: 40px;'>Data SWEEPERper</h1>", unsafe_allow_html=True)
 sidebar_option = ["Home", "Data Operations"]
 page = st.sidebar.selectbox("select a section ", sidebar_option)
 st.sidebar.write("Thanks for choosing **Data Sweeper**! 🚀 Let's transform your data! 🙌")
