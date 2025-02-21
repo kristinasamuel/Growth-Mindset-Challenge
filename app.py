@@ -57,8 +57,6 @@ elif page == "Data Operations":
     if uploaded_files:
         for file in uploaded_files:
             file_ext = os.path.splitext(file.name)[-1].lower()
-
-            # Handle files
             # Handle file
             if file_ext ==".csv":
                df =pd.read_csv(file)
